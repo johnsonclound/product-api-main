@@ -40,5 +40,12 @@ const Product = {
     restore: (id, callback) => {
         const query = 'UPDATE products SET is_deleted = 0 WHERE id = ?';
         db.query(query, [id], callback);
+    },
+    // Get all data for rendering in views
+    getProductView: (callback) => {
+        const query = 'SELECT * FROM products WHERE is_deleted = 0';
+        db.query(query, callback);
     }
 };
+
+module.exports = Product; // Export the Product model
