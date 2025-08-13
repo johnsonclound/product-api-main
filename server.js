@@ -16,7 +16,7 @@ app.use('/api', productRoutes); // Use product routes under /api path
 app.use('/', webRoutes); // Use web routes under root path
 
 // Serve Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Start server
 app.listen(PORT, () => {
